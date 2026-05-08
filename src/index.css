@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Orbitron:wght@700;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Orbitron", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  
+  --color-bg-deep: #050505;
+  --color-bg-panel: #0a0a0a;
+  --color-bg-sub: #0d0d0d;
+  --color-bg-footer: #111;
+  --color-border-main: #222;
+  --color-border-focus: #333;
+  --color-text-main: #e6edf3;
+  --color-text-muted: #8b949e;
+  
+  /* Retaining cyan/magenta as subtle accents */
+  --color-cyan-accent: #00e0ff;
+  --color-magenta-accent: #ff073a;
+}
+
+@layer base {
+  body {
+    @apply font-sans bg-bg-deep text-text-main min-h-screen overflow-x-hidden;
+  }
+}
+
+@layer components {
+  .holo-card {
+    @apply bg-bg-panel border border-border-main rounded-lg p-5 mb-4 relative transition-all duration-200;
+  }
+
+  .holo-card:hover {
+    @apply border-border-focus;
+  }
+
+  .messages::-webkit-scrollbar {
+    @apply w-1;
+  }
+  .messages::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  .messages::-webkit-scrollbar-thumb {
+    @apply bg-border-main rounded-full;
+  }
+
+  .prose {
+    @apply leading-relaxed text-[14px];
+  }
+}
